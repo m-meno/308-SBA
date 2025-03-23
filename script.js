@@ -1,87 +1,87 @@
 const CourseInfo = {
-    id: 451,
-    name: "Introduction to JavaScript"
-  };
-  
-  // The provided assignment group.
-  const AssignmentGroup = {
-    id: 12345,
-    name: "Fundamentals of JavaScript",
-    course_id: 451,     //the ID of the course the assignment group belongs to
-    group_weight: 25,   //the percentage weight of the entire assignment group
-    assignments: [
-      {
-        id: 1,
-        name: "Declare a Variable",
-        due_at: "2023-01-25",
-        points_possible: 50
-      },
-      {
-        id: 2,
-        name: "Write a Function",
-        due_at: "2023-02-27",       //the due date
-        points_possible: 150        //max amount of points possible
-      },
-      {
-        id: 3,
-        name: "Code the World",
-        due_at: "3156-11-15",
-        points_possible: 500
-      }
-    ]
-  };
-  
-  // The provided learner submission data.
-  const LearnerSubmissions = [
+  id: 451,
+  name: "Introduction to JavaScript"
+};
+
+// The provided assignment group.
+const AssignmentGroup = {
+  id: 12345,
+  name: "Fundamentals of JavaScript",
+  course_id: 451,     //the ID of the course the assignment group belongs to
+  group_weight: 25,   //the percentage weight of the entire assignment group
+  assignments: [
     {
-      learner_id: 125,
-      assignment_id: 1,
-      submission: {
-        submitted_at: "2023-01-25",
-        score: 47
-      }
+      id: 1,
+      name: "Declare a Variable",
+      due_at: "2023-01-25",
+      points_possible: 50
     },
     {
-      learner_id: 125,
-      assignment_id: 2,
-      submission: {
-        submitted_at: "2023-02-12",
-        score: 150
-      }
+      id: 2,
+      name: "Write a Function",
+      due_at: "2023-02-27",       //the due date
+      points_possible: 150        //max amount of points possible
     },
     {
-      learner_id: 125,
-      assignment_id: 3,
-      submission: {
-        submitted_at: "2023-01-25",
-        score: 400
-      }
-    },
-    {
-      learner_id: 132,
-      assignment_id: 1,
-      submission: {
-        submitted_at: "2023-01-24",
-        score: 39
-      }
-    },
-    {
-      learner_id: 132,
-      assignment_id: 2,
-      submission: {
-        submitted_at: "2023-03-07",
-        score: 140
-      }
+      id: 3,
+      name: "Code the World",
+      due_at: "3156-11-15",
+      points_possible: 500
     }
-  ];
+  ]
+};
+
+// The provided learner submission data.
+const LearnerSubmissions = [
+  {
+    learner_id: 125,
+    assignment_id: 1,
+    submission: {
+      submitted_at: "2023-01-25",
+      score: 47
+    }
+  },
+  {
+    learner_id: 125,
+    assignment_id: 2,
+    submission: {
+      submitted_at: "2023-02-12",
+      score: 150
+    }
+  },
+  {
+    learner_id: 125,
+    assignment_id: 3,
+    submission: {
+      submitted_at: "2023-01-25",
+      score: 400
+    }
+  },
+  {
+    learner_id: 132,
+    assignment_id: 1,
+    submission: {
+      submitted_at: "2023-01-24",
+      score: 39
+    }
+  },
+  {
+    learner_id: 132,
+    assignment_id: 2,
+    submission: {
+      submitted_at: "2023-03-07",
+      score: 140
+    }
+  }
+];
 
 
-  try {
-    if (AssignmentGroup.course_id !== CourseInfo.id) throw `Invalid Course ID`;
-   }
-      catch(err){
-      console.log(err)
-  }  
+try {
+  if (AssignmentGroup.course_id !== CourseInfo.id) throw `Invalid Course ID`;
+}
+catch (err) {
+  console.log(err)
+}
 
 
 
@@ -104,6 +104,14 @@ const CourseInfo = {
 // final result stored in 2 objects with keys id:, avg:, 1:, 2:
 
 
+try {
+  if (AssignmentGroup.course_id !== CourseInfo.id) throw `Invalid Course ID`;
+}
+catch (err) {
+  console.log(err)
+}
+
+
 const results = []
         if (results.includes({id: 125})){           //109 - 117 are making objects for each student
             console.log(`Id exists`);
@@ -114,22 +122,24 @@ const results = []
             console.log(`Id exists`);
          }  else {
             results.push({id: 132})
-         }  console.log(results)
+         }  //console.log(results)
 
          for (let i = 0; i < LearnerSubmissions.length; i++){         //created a for loop
-            if (LearnerSubmissions[i].assignment_id > 0 ){             //&& LearnerSubmissions[i].learner_id      //---trying to do a conditional?
-                let sumAssignmentIDs = ``
-                sumAssignmentIDs += LearnerSubmissions[i].assignment_id
-                console.log(sumAssignmentIDs)                                        // now I have a string of assignment id's and the first three are for student id 125 and the last two for student id 
-            } 
+            if (LearnerSubmissions[i].assignment_id > 0 && LearnerSubmissions[i].learner_id === results[1].id){             //conditional to retrieve only the assignment ids for the student in the object at index 1 in results array
+                let assignment = ``
+                assignment += LearnerSubmissions[i].assignment_id
+                                                 // now I have a string of assignment id's for the student at ndex 1 
+                  results.push(assignment)                                               //trying to add the assignment ids to the index of the student, but struggling to splice in a nested array (it keeps returning a results array with objects for each student and an object for assignment ids)
+                  console.log(results)
+              } 
                 //if (sumAssignmentIDs[1] = AssignmentGroup.assignments[1].id)           //can;t iterate in the same loop because diff length arrrays
                 //    console.log(`Match`)
          }
 
 
-         
-        
-       
+
+
+
 
 // function getLearnerData(course, ag, submissions){
 //     const results = []
@@ -143,7 +153,7 @@ const results = []
 //         } //is not in results, then create an object for 
 // }       
 
-  
+
 //   function getLearnerData(course, ag, submissions) {
 //     // here, we would process this data to achieve the desired result.
 //     const result = [
@@ -160,15 +170,15 @@ const results = []
 //         2: 0.833 // late: (140 - 15) / 150
 //       }
 //     ];
-  
+
 //     return result;
 //   }
-  
-  //const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
-  
-  //console.log(result);
-  
+//const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+
+
+//console.log(result);
+
 
 
 
@@ -184,3 +194,24 @@ const results = []
 //      console.log(`Error-Invalid Input`)
 //}
 
+
+//  array of objects with student id is the primary key 
+//  weighted average 
+//  score for assignment 1
+//  score for assignment 2
+
+// givens: 
+
+// const results = []
+
+// const students = [];
+
+// LearnerSubmissions.forEach(studentsResults)                         
+//  function studentsResults(learner_id, results){
+//  if (results.include(learner_id)){
+//   return `Found`
+//  } else {
+//    results.push(learner_id)
+//     console.log(results)
+//   } 
+// }
