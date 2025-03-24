@@ -24,6 +24,17 @@ function scoreAve(a, b){
 
 // if (AssignmentGroup.assignments[i].due_at <)
 
+
+
+
+const studentsubmission = []
+studentsubmission.push(LearnerSubmissions)
+function assignmentID(assignment_id){
+    
+}
+
+
+
 if (LearnerSubmission[i].submission.submitted_at > AssignmentGroup.assignments[i].due_at)
        function lateScore(score, dec_percent_off = 0.1, points_possible){
             let newScore = score - (dec_percent_off * points_possible)
@@ -98,3 +109,39 @@ for (let i = 0; i < LearnerSubmissions.length; i++){         //created a for loo
         //if (sumAssignmentIDs[1] = AssignmentGroup.assignments[1].id)           //can;t iterate in the same loop because diff length arrrays
         //    console.log(`Match`)
  }
+
+
+ //if (sumAssignmentIDs[1] = AssignmentGroup.assignments[1].id)           //can;t iterate in the same loop because diff length arrrays
+                //    console.log(`Match`)
+
+
+
+
+
+                if (LearnerSubmissions[i].assignment_id > 0 && LearnerSubmissions[i].learner_id === results[1].id){             //conditional to retrieve only the assignment ids for the student in the object at index 1 in results array
+                    let assignment = ``
+                    assignment += LearnerSubmissions[i].assignment_id
+                                                     // now I have a string of assignment id's for the student at index 1 
+                      //results.push(assignment)                                               //trying to add the assignment ids to the index of the student, but struggling to splice in a nested array (it keeps returning a results array with objects for each student and an object for assignment ids)
+                      console.log(assignment)
+                  }   //function matchAssign (assignment_id, assignID){
+                      // let assignmentinfo = AssignmentGroup.assignments
+                      // if (assignmentinfo[i].id === LearnerSubmissions[i].assignment_id){
+                      //   console.log(`match`)
+                        
+                      // }
+                      // }
+                      AssignmentGroup.assignments.includes ((id) => id.match == results[i].id); console.log(`yes`)
+                                                                                                                      //Array.includes ((el, index) => el.match == ``)
+                  }
+    
+    
+                    //if (sumAssignmentIDs[1] = AssignmentGroup.assignments[1].id)           //can;t iterate in the same loop because diff length arrrays
+                    //    console.log(`Match`)
+    
+    
+
+                    let i =0;
+                    const keys = Object.keys(AssignmentGroup.assignments[i]); //learning things! This returns the keys of AssignmentGroup ex: [ 'id', 'name', 'due_at', 'points_possible' ]
+                    console.log(keys)
+           
