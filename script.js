@@ -79,26 +79,7 @@ const LearnerSubmissions = [
 
 
 
-//   let i = 0;
-//   for (let i = 0; i < LearnerSubmissions.length; i++){
-//   if (LearnerSubmissions[i].assignment_id == AssignmentGroup.assignments[i].id){
-//         if (AssignmentGroup.assignments[i].due_at > `2025-01-01` ){ //evaluate if due date passed 
-//                                              
-//         } else if (LearnerSubmissions[i].submission.submitted_at > AssignmentGroup.assignments[i].due_at) // see if sub date >= sumbit date
-//             function lateScore(score, percent_off = 0.1, points_possible){    //       (function to calculate lower grade)
-//                 let newScore = score - (percent_off * points_possible)
-//        }                                                                       
-//         // else just score
-//         // sum += / points_possible
-//   }
-// }
-
-
-
-// final result stored in 2 objects with keys id:, avg:, 1:, 2:
-
-
-
+// final result stored in 2 objects each with keys id:, avg:, 1:, 2:
 
 const results = []
 try {
@@ -116,20 +97,13 @@ catch (err) {
             console.log(`Id exists`);
          }  else {
             results.push({id: 132})
-         }  //console.log(results)
+         }  console.log(results)
       
-        
-
-         const assignmentInfo = AssignmentGroup.assignments;
-         if (assignmentInfo.includes(`id:`)){
-          
-          console.log(`yes`)
-         }
-         
+      
 
 
 
-        //  LearnerSubmissions.forEach(function(assignment_id, results) {
+        //  LearnerSubmissions.forEach(function(assignment_id, results) { ------------------------------------------- attempt 1 at using a .forEach add the assignment ids to the results array
         //   if (results.includes(assignment_id)){
         //     return `here`
         //   } else {
@@ -137,10 +111,10 @@ catch (err) {
         //     console.log(results)
         //   }
           
-        // });
+        //});
 
-//       // 
-      // LearnerSubmissions.forEach(assignmentIDs)        -------------------- attempt at using a .forEach to add the assignment ids to the results array
+      // 
+      // LearnerSubmissions.forEach(assignmentIDs)        -------------------- attempt 2 at using a .forEach to add the assignment ids to the results array
       //    function assignmentIDs (assignment_id, results){
       //     if (results.includes(assignment_id)){
       //      return `yes`
@@ -149,56 +123,56 @@ catch (err) {
       //       console.log(results)
       //     } 
       // }
-      //    for (let i = 0; i < LearnerSubmissions.length; i++){   
-      //       function getAssignID (arr, key){
-      //       // let arr = LearnerSubmissions;
-      //       // let key = assignment_id;
-      //       let assignmentIDS = [];
-      //       if (arr[i] && arr[i].includes(assignment_id)) {
-      //       assignmentIDS.push(arr[i][assignment_id]);
-      //       console.log(assignmentIDS)
-      //     }
-      //  }
+         
+         
+      // function validateMatchingAssignID(assignment_id, id){
+      //   if (assigment_id !== id){
+      //     throw error (`no match`)
+      //     console.log(validateMatchingAssignID(assignment_id, id))
+      //   }
+
+      //   
       // }
-        //  for (let i = 0; i < LearnerSubmissions.length; i++){         //created a for loop
-        //     if (LearnerSubmissions[i].assignment_id > 0 && LearnerSubmissions[i].learner_id === results[1].id){             //conditional to retrieve only the assignment ids for the student in the object at index 1 in results array
+        //  for (let i = 0; i < LearnerSubmissions.length; i++){                                                              //basic for loop
+        //     if (LearnerSubmissions[i].assignment_id > 0 && LearnerSubmissions[i].learner_id === results[1].id){             //failed to do this a better way so tried to make a conditional to retrieve only the assignment ids for the student in the object at index 1 in results array
         //         let assignmentlearner2 = ``
-        //         assignmentlearner2 += LearnerSubmissions[i].assignment_id
-        //                                          // now I have a string of assignment id's for the student at index 1 
-        //           results.splice(assignmentlearner2)                                               //trying to add the assignment ids to the index of the student, but struggling to splice in a nested array (it keeps returning a results array with objects for each student and an object for assignment ids)
+        //          assignmentlearner2 += LearnerSubmissions[i].assignment_id                           // now I have a string of assignment id's for the student at index 1 
+        //                                                                                            
+        //           results.splice(1. 0, assignmentlearner2)                                               //tried to add the assignment ids to the index of the student, but struggling to splice in a nested array (it keeps returning a results array with objects for each student and an object for assignment ids)
         //           console.log(results)
-        //       }   //function matchAssign (assignment_id, assignID){
-                  // let assignmentinfo = AssignmentGroup.assignments
-                  // if (assignmentinfo[i].id === LearnerSubmissions[i].assignment_id){
-                  //   console.log(`match`)
+        //       }   function matchAssign (assignment_id, assignID){                                   //
+        //           let assignmentinfo = AssignmentGroup.assignments
+        //           if (assignmentinfo[i].id === LearnerSubmissions[i].assignment_id){
+        //             console.log(`match`)
                     
-                  // }
-                  // }
+        //            }
+        //            }
                   //AssignmentGroup.assignments.includes ((id) => id.match == results[i].id); console.log(`yes`)
-                                                                                                                  //Array.includes ((el, index) => el.match == ``)
-              //}
+                                                                                                                  
+        //              
+
+         //    Attempt at the avg calculation: 
+        //     if (AssignmentGroup.assignments[i].due_at > `2025-01-01`); continue; {
+        //         } else if {
+        //         }   if (LearnerSubmission[i].submission.submitted_at > AssignmentGroup.assignments[i].due_at){ 
+        //                 function lateScore(score, percent_off = 0.1, points_possible) {
+        //                 let newScore = score - (percent_off * points_possible);
+        //                 } try {
+        //                    if (points_possible == 0) throw `Not valid number`;
+        //                } catch (error) {
+                           
+        //                }
+        //             }    else (LearnerSubmission[i].submission.submitted_at <= AssignmentGroup[i].due_at){
+                        
+        //                    function avgScore(totalScore, points_possible){
+        //                     let avg = (totalScore / points_possible)
+        //                        return avg
+        //                 }
+        //             }   
+        
+                
 
 
-                //if (sumAssignmentIDs[1] = AssignmentGroup.assignments[1].id)           //can;t iterate in the same loop because diff length arrrays
-                //    console.log(`Match`)
-
-
-
-
-
-
-
-// function getLearnerData(course, ag, submissions){
-//     const results = []
-//     let avg = 0;
-//     for (let i = 0; i < LearnerSubmissions.length; i++){
-//         if (results.includes({id: 125})){
-//             console.log(`Id exists`);
-//          } else {
-//             results.pop({id: 125})
-//             } console.log(results)
-//         } //is not in results, then create an object for 
-// }       
 
 
 //   function getLearnerData(course, ag, submissions) {
@@ -237,32 +211,3 @@ catch (err) {
 // 5.) Create a function named getLearnerData() that accepts these values as parameters, in the order listed: (CourseInfo, AssignmentGroup, [LearnerSubmission]), and returns the formatted result, which should be an array of objects as described above.
 // 6.) You may use as many helper functions as you see fit.
 
-
-
-//  array of objects with student id is the primary key 
-//  weighted average 
-//  score for assignment 1
-//  score for assignment 2
-
-// givens: 
-
-// const results = []
-
-// const students = [];
-
-// LearnerSubmissions.forEach(studentsResults)                         
-//  function studentsResults(learner_id, results){
-//  if (results.include(learner_id)){
-//   return `Found`
-//  } else {
-//    results.push(learner_id)
-//     console.log(results)
-//   } 
-// }
-
-
-
-function compareArrays(submissions, assignment_info, id){
-  return submissions.filter(`id:` => assignment_info.includes(`id:`));
-
-}
